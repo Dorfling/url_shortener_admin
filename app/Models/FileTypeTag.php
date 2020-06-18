@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\FileTypeTag
  *
  * @property-read \App\Models\FileType $file_type
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\Tag $tag
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileTypeTag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileTypeTag newQuery()
@@ -21,6 +22,7 @@ class FileTypeTag extends \App\Models\BaseModel\BaseModel
     protected $table = 'files.file_type_tags';
 
     protected $casts = [
+        'uuid' => 'uuid',
         'file_type_id' => 'int',
         'tag_id' => 'int'
     ];

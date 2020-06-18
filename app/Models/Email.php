@@ -11,6 +11,7 @@ namespace App\Models;
  *
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\EmailGravatar[] $email_gravatars
  * @property-read int|null $email_gravatars_count
+ * @property \UuidInterface $uuid
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\UserEmail[] $user_emails
  * @property-read int|null $user_emails_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $users
@@ -49,7 +50,7 @@ class Email extends \App\Models\BaseModel\BaseModel
     public function users()
     {
         return $this->belongsToMany(\App\Models\User::class, 'users.user_emails', 'email_id')
-                    ->withPivot('id', 'deleted_at', 'active')
+                    ->withPivot('id', 'uuid', 'deleted_at', 'active')
                     ->withTimestamps();
     }
 

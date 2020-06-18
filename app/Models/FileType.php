@@ -13,6 +13,7 @@ namespace App\Models;
  * @property-read int|null $file_type_tags_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\File[] $files
  * @property-read int|null $files_count
+ * @property \UuidInterface $uuid
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Tag[] $tags
  * @property-read int|null $tags_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileType newModelQuery()
@@ -35,7 +36,7 @@ class FileType extends \App\Models\BaseModel\BaseModel
     public function tags()
     {
         return $this->belongsToMany(\App\Models\Tag::class, 'files.file_type_tags', 'file_type_id')
-                    ->withPivot('id')
+                    ->withPivot('id', 'uuid')
                     ->withTimestamps();
     }
 

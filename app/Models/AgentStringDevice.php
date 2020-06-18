@@ -11,6 +11,7 @@ namespace App\Models;
  *
  * @property-read \App\Models\AgentString $agent_string
  * @property-read \App\Models\AgentStringDeviceType $agent_string_device_type
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDevice newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDevice newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDevice query()
@@ -21,6 +22,7 @@ class AgentStringDevice extends \App\Models\BaseModel\BaseModel
     protected $table = 'agent_strings.agent_string_devices';
 
     protected $casts = [
+        'uuid' => 'uuid',
         'agent_string_id' => 'int',
         'agent_string_device_type_id' => 'int'
     ];

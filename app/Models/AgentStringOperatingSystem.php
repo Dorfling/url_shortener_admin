@@ -12,6 +12,7 @@ namespace App\Models;
  * @property-read \App\Models\AgentString $agent_string
  * @property-read \App\Models\AgentStringOperatingSystemType $agent_string_operating_system_type
  * @property-read \App\Models\AgentStringOperatingSystemVersionType $agent_string_operating_system_version_type
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringOperatingSystem newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringOperatingSystem newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringOperatingSystem query()
@@ -22,6 +23,7 @@ class AgentStringOperatingSystem extends \App\Models\BaseModel\BaseModel
     protected $table = 'agent_strings.agent_string_operating_systems';
 
     protected $casts = [
+        'uuid' => 'uuid',
         'agent_string_id' => 'int',
         'agent_string_operating_system_type_id' => 'int',
         'agent_string_operating_system_version_type_id' => 'int'

@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\ModelHasRole
  *
  * @property-read \App\Models\Company $company
+ * @property \UuidInterface $uuid
  * @property-read \Spatie\Permission\Models\Role $role
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ModelHasRole newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ModelHasRole newQuery()
@@ -25,6 +26,7 @@ class ModelHasRole extends \App\Models\BaseModel\BaseModel
 
     protected $casts = [
         'role_id' => 'int',
+        'uuid' => 'uuid',
         'model_id' => 'int',
         'company_id' => 'int'
     ];

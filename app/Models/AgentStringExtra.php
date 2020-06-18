@@ -11,6 +11,7 @@ namespace App\Models;
  *
  * @property-read \App\Models\AgentString $agent_string
  * @property mixed $data_json
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringExtra newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringExtra newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringExtra query()
@@ -25,6 +26,7 @@ class AgentStringExtra extends \App\Models\BaseModel\BaseModel
     protected $table = 'agent_strings.agent_string_extras';
 
     protected $casts = [
+        'uuid' => 'uuid',
         'agent_string_id' => 'int',
         'data_json' => 'text'
     ];
