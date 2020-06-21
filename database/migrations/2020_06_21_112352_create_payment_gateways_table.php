@@ -24,8 +24,8 @@ class CreatePaymentGatewaysTable extends Migration
             $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->text('name')->unique();
         });
-        $sql = 'INSERT INTO billing.payment_gateways (id,name)
-                VALUES (1,\'Payfast\')';
+        $sql = 'INSERT INTO billing.payment_gateways (id, uuid, name)
+                VALUES (1, \'\'5ba11c62-29bf-4108-aa89-9e2400c4b8a4\'\', \'Payfast\')';
         DB::insert($sql);
 
     }
