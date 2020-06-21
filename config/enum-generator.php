@@ -55,5 +55,8 @@ return [
 //        'tags.tags' => [
 //            'public.uuid' => true,
 //        ],
+        'billing.payment_gateways' => [
+            'uuid' => true,
+        ],
     ],
 ];
