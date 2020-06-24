@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 7.11.0 on 2020-06-21 17:12:50.
+ * Generated for Laravel 7.11.0 on 2020-06-24 18:07:09.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -7160,81 +7160,378 @@ namespace Illuminate\Support\Facades {
     class Mail {
         
         /**
-         * Get a mailer instance by name.
+         * 
          *
-         * @param string|null $name
-         * @return \Illuminate\Mail\Mailer 
          * @static 
          */ 
         public static function mailer($name = null)
         {
-                        /** @var \Illuminate\Mail\MailManager $instance */
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
                         return $instance->mailer($name);
         }
         
         /**
-         * Get a mailer driver instance.
+         * 
          *
-         * @param string|null $driver
-         * @return \Illuminate\Mail\Mailer 
          * @static 
          */ 
-        public static function driver($driver = null)
+        public static function send($view, $data = [], $callback = null)
         {
-                        /** @var \Illuminate\Mail\MailManager $instance */
-                        return $instance->driver($driver);
+            //Method inherited from \BeyondCode\HeloLaravel\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->send($view, $data, $callback);
         }
         
         /**
-         * Create a new transport instance.
+         * Set the global from address and name.
          *
-         * @param array $config
-         * @return \Swift_Transport 
-         * @static 
-         */ 
-        public static function createTransport($config)
-        {
-                        /** @var \Illuminate\Mail\MailManager $instance */
-                        return $instance->createTransport($config);
-        }
-        
-        /**
-         * Get the default mail driver name.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getDefaultDriver()
-        {
-                        /** @var \Illuminate\Mail\MailManager $instance */
-                        return $instance->getDefaultDriver();
-        }
-        
-        /**
-         * Set the default mail driver name.
-         *
-         * @param string $name
+         * @param string $address
+         * @param string|null $name
          * @return void 
          * @static 
          */ 
-        public static function setDefaultDriver($name)
+        public static function alwaysFrom($address, $name = null)
         {
-                        /** @var \Illuminate\Mail\MailManager $instance */
-                        $instance->setDefaultDriver($name);
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->alwaysFrom($address, $name);
         }
         
         /**
-         * Register a custom transport creator Closure.
+         * Set the global reply-to address and name.
          *
-         * @param string $driver
-         * @param \Closure $callback
-         * @return \Illuminate\Mail\MailManager 
+         * @param string $address
+         * @param string|null $name
+         * @return void 
          * @static 
          */ 
-        public static function extend($driver, $callback)
+        public static function alwaysReplyTo($address, $name = null)
         {
-                        /** @var \Illuminate\Mail\MailManager $instance */
-                        return $instance->extend($driver, $callback);
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->alwaysReplyTo($address, $name);
+        }
+        
+        /**
+         * Set the global return path address.
+         *
+         * @param string $address
+         * @return void 
+         * @static 
+         */ 
+        public static function alwaysReturnPath($address)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->alwaysReturnPath($address);
+        }
+        
+        /**
+         * Set the global to address and name.
+         *
+         * @param string $address
+         * @param string|null $name
+         * @return void 
+         * @static 
+         */ 
+        public static function alwaysTo($address, $name = null)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->alwaysTo($address, $name);
+        }
+        
+        /**
+         * Begin the process of mailing a mailable class instance.
+         *
+         * @param mixed $users
+         * @return \Illuminate\Mail\PendingMail 
+         * @static 
+         */ 
+        public static function to($users)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->to($users);
+        }
+        
+        /**
+         * Begin the process of mailing a mailable class instance.
+         *
+         * @param mixed $users
+         * @return \Illuminate\Mail\PendingMail 
+         * @static 
+         */ 
+        public static function cc($users)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->cc($users);
+        }
+        
+        /**
+         * Begin the process of mailing a mailable class instance.
+         *
+         * @param mixed $users
+         * @return \Illuminate\Mail\PendingMail 
+         * @static 
+         */ 
+        public static function bcc($users)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->bcc($users);
+        }
+        
+        /**
+         * Send a new message with only an HTML part.
+         *
+         * @param string $html
+         * @param mixed $callback
+         * @return void 
+         * @static 
+         */ 
+        public static function html($html, $callback)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->html($html, $callback);
+        }
+        
+        /**
+         * Send a new message with only a raw text part.
+         *
+         * @param string $text
+         * @param mixed $callback
+         * @return void 
+         * @static 
+         */ 
+        public static function raw($text, $callback)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->raw($text, $callback);
+        }
+        
+        /**
+         * Send a new message with only a plain part.
+         *
+         * @param string $view
+         * @param array $data
+         * @param mixed $callback
+         * @return void 
+         * @static 
+         */ 
+        public static function plain($view, $data, $callback)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->plain($view, $data, $callback);
+        }
+        
+        /**
+         * Render the given message as a view.
+         *
+         * @param string|array $view
+         * @param array $data
+         * @return string 
+         * @static 
+         */ 
+        public static function render($view, $data = [])
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->render($view, $data);
+        }
+        
+        /**
+         * Queue a new e-mail message for sending.
+         *
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @param string|null $queue
+         * @return mixed 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function queue($view, $queue = null)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->queue($view, $queue);
+        }
+        
+        /**
+         * Queue a new e-mail message for sending on the given queue.
+         *
+         * @param string $queue
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @return mixed 
+         * @static 
+         */ 
+        public static function onQueue($queue, $view)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->onQueue($queue, $view);
+        }
+        
+        /**
+         * Queue a new e-mail message for sending on the given queue.
+         * 
+         * This method didn't match rest of framework's "onQueue" phrasing. Added "onQueue".
+         *
+         * @param string $queue
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @return mixed 
+         * @static 
+         */ 
+        public static function queueOn($queue, $view)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->queueOn($queue, $view);
+        }
+        
+        /**
+         * Queue a new e-mail message for sending after (n) seconds.
+         *
+         * @param \DateTimeInterface|\DateInterval|int $delay
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @param string|null $queue
+         * @return mixed 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function later($delay, $view, $queue = null)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->later($delay, $view, $queue);
+        }
+        
+        /**
+         * Queue a new e-mail message for sending after (n) seconds on the given queue.
+         *
+         * @param string $queue
+         * @param \DateTimeInterface|\DateInterval|int $delay
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @return mixed 
+         * @static 
+         */ 
+        public static function laterOn($queue, $delay, $view)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->laterOn($queue, $delay, $view);
+        }
+        
+        /**
+         * Get the array of failed recipients.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function failures()
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->failures();
+        }
+        
+        /**
+         * Get the Swift Mailer instance.
+         *
+         * @return \Swift_Mailer 
+         * @static 
+         */ 
+        public static function getSwiftMailer()
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->getSwiftMailer();
+        }
+        
+        /**
+         * Get the view factory instance.
+         *
+         * @return \Illuminate\Contracts\View\Factory 
+         * @static 
+         */ 
+        public static function getViewFactory()
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->getViewFactory();
+        }
+        
+        /**
+         * Set the Swift Mailer instance.
+         *
+         * @param \Swift_Mailer $swift
+         * @return void 
+         * @static 
+         */ 
+        public static function setSwiftMailer($swift)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        $instance->setSwiftMailer($swift);
+        }
+        
+        /**
+         * Set the queue manager instance.
+         *
+         * @param \Illuminate\Contracts\Queue\Factory $queue
+         * @return \BeyondCode\HeloLaravel\Laravel7Mailer 
+         * @static 
+         */ 
+        public static function setQueue($queue)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        /** @var \BeyondCode\HeloLaravel\Laravel7Mailer $instance */
+                        return $instance->setQueue($queue);
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        \BeyondCode\HeloLaravel\Laravel7Mailer::macro($name, $macro);
+        }
+        
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @param bool $replace
+         * @return void 
+         * @throws \ReflectionException
+         * @static 
+         */ 
+        public static function mixin($mixin, $replace = true)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        \BeyondCode\HeloLaravel\Laravel7Mailer::mixin($mixin, $replace);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+            //Method inherited from \Illuminate\Mail\Mailer            
+                        return \BeyondCode\HeloLaravel\Laravel7Mailer::hasMacro($name);
         }
         
         /**
@@ -7369,102 +7666,6 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
                         return $instance->hasQueued($mailable);
-        }
-        
-        /**
-         * Begin the process of mailing a mailable class instance.
-         *
-         * @param mixed $users
-         * @return \Illuminate\Mail\PendingMail 
-         * @static 
-         */ 
-        public static function to($users)
-        {
-                        /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
-                        return $instance->to($users);
-        }
-        
-        /**
-         * Begin the process of mailing a mailable class instance.
-         *
-         * @param mixed $users
-         * @return \Illuminate\Mail\PendingMail 
-         * @static 
-         */ 
-        public static function bcc($users)
-        {
-                        /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
-                        return $instance->bcc($users);
-        }
-        
-        /**
-         * Send a new message with only a raw text part.
-         *
-         * @param string $text
-         * @param \Closure|string $callback
-         * @return void 
-         * @static 
-         */ 
-        public static function raw($text, $callback)
-        {
-                        /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
-                        $instance->raw($text, $callback);
-        }
-        
-        /**
-         * Send a new message using a view.
-         *
-         * @param string|array $view
-         * @param array $data
-         * @param \Closure|string|null $callback
-         * @return void 
-         * @static 
-         */ 
-        public static function send($view, $data = [], $callback = null)
-        {
-                        /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
-                        $instance->send($view, $data, $callback);
-        }
-        
-        /**
-         * Queue a new e-mail message for sending.
-         *
-         * @param string|array $view
-         * @param string|null $queue
-         * @return mixed 
-         * @static 
-         */ 
-        public static function queue($view, $queue = null)
-        {
-                        /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
-                        return $instance->queue($view, $queue);
-        }
-        
-        /**
-         * Queue a new e-mail message for sending after (n) seconds.
-         *
-         * @param \DateTimeInterface|\DateInterval|int $delay
-         * @param \Illuminate\Contracts\Mail\Mailable|string|array $view
-         * @param string|null $queue
-         * @return mixed 
-         * @static 
-         */ 
-        public static function later($delay, $view, $queue = null)
-        {
-                        /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
-                        return $instance->later($delay, $view, $queue);
-        }
-        
-        /**
-         * Get the array of failed recipients.
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function failures()
-        {
-                        /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
-                        return $instance->failures();
         }
          
     }
@@ -12094,6 +12295,46 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Routing\Router $instance */
                         return $instance->macroCall($method, $parameters);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function auth($options = [])
+        {
+                        return \Illuminate\Routing\Router::auth($options);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resetPassword()
+        {
+                        return \Illuminate\Routing\Router::resetPassword();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function confirmPassword()
+        {
+                        return \Illuminate\Routing\Router::confirmPassword();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function emailVerification()
+        {
+                        return \Illuminate\Routing\Router::emailVerification();
         }
          
     }

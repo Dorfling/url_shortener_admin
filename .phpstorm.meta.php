@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-06-21 17:12:57.
+    * Generated on 2020-06-24 18:07:22.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13,6 +13,7 @@ namespace PHPSTORM_META {
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -197,8 +198,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -227,6 +228,7 @@ namespace PHPSTORM_META {
     override(\Illuminate\Container\Container::makeWith(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -411,8 +413,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -441,6 +443,7 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -625,8 +628,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -655,6 +658,7 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -839,8 +843,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -869,6 +873,7 @@ namespace PHPSTORM_META {
     override(\App::make(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -1053,8 +1058,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -1083,6 +1088,7 @@ namespace PHPSTORM_META {
     override(\App::makeWith(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -1267,8 +1273,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -1297,6 +1303,7 @@ namespace PHPSTORM_META {
     override(\app(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -1481,8 +1488,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -1511,6 +1518,7 @@ namespace PHPSTORM_META {
     override(\resolve(0), map([
         '' => '@',
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
+        'BeyondCode\HeloLaravel\Mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'Chojnicki\VideoPlatformsParser\VideoPlatformsParser' => \Illuminate\Foundation\Application::class,
         'Facade\IgnitionContracts\SolutionProviderRepository' => \Facade\Ignition\SolutionProviders\SolutionProviderRepository::class,
         'Facade\Ignition\DumpRecorder\DumpRecorder' => \Facade\Ignition\DumpRecorder\DumpRecorder::class,
@@ -1695,8 +1703,8 @@ namespace PHPSTORM_META {
         'hash.driver' => \Illuminate\Hashing\BcryptHasher::class,
         'laravelenumgenerator' => \HaakCo\LaravelEnumGenerator\LaravelEnumGenerator::class,
         'log' => \Illuminate\Log\LogManager::class,
-        'mail.manager' => \Illuminate\Mail\MailManager::class,
-        'mailer' => \Illuminate\Mail\Mailer::class,
+        'mail.manager' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
+        'mailer' => \BeyondCode\HeloLaravel\Laravel7Mailer::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
