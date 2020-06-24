@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\Log;
 class ShortUrlDomainLibrary
 {
     /**
+     * This still will need to cater for internationalized domains and IDNs
+     *
+     * @param $domainString
+     * @return bool
+     */
+    public function validateDomainString($domainString): bool
+    {
+        return preg_match('/^(?!\-)(?:(?:[a-zA-Z\d][a-zA-Z\d\-]{0,61})?[a-zA-Z\d]\.){1,126}(?!\d+)[a-zA-Z\d]{1,63}$/i', $domainString);
+    }
+
+    /**
      * @param User $user
      * @return array
      * @throws \Exception
