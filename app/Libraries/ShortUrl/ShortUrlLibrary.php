@@ -24,4 +24,15 @@ class ShortUrlLibrary
     }
 
 
+    /**
+     * @param $int
+     * @return string
+     */
+    public function getShortUrlHashFromId($int): string
+    {
+        $sql = 'select stringify_bigint(pseudo_encrypt(CAST ( :int AS INT ))) as stringify';
+        $result = DB::selectOne($sql, ['int' => $int]);
+
+        return $result->stringify;
+    }
 }
