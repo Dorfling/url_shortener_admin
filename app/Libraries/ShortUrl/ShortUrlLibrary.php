@@ -47,6 +47,42 @@ class ShortUrlLibrary
         return $shortUrl;
     }
 
+
+    /**
+     * @param string $url
+     * @param string $queryString
+     * @return string
+     */
+    public function appendParametersToPath(string $url, string $queryString)
+    {
+        return $this->appendValueToHref($url,$queryString);
+    }
+
+    /**
+     * @param string $href
+     * @param string|null $value
+     * @return string
+     */
+    private function appendValueToHref(string $href, ?string $value): string
+    {
+        if (strpos($href, '?') !== false) {
+            //If the url has a ? already in, but it's at the end, append the params
+            if (substr($href, -1) === '?') {
+                $href .= $value;
+                return $href;
+            }
+            //If the url has a & at the end, don't append another
+            if (substr($href, -1) === '&') {
+                $href .= $value;
+                return $href;
+            }
+            $href .= '&' . $value;
+            return $href;
+        }
+        $href .= '?' . $value;
+        return $href;
+    }
+
     /**
      * @param ShortUrlDomain $shortUrlDomain
      * @param $int
