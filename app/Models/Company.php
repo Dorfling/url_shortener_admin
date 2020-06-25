@@ -19,6 +19,8 @@ namespace App\Models;
  * @property-read int|null $roles_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ShortUrlDomain[] $short_url_domains
  * @property-read int|null $short_url_domains_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ShortUrl[] $short_urls
+ * @property-read int|null $short_urls_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $users
  * @property-read int|null $users_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company newModelQuery()
@@ -48,11 +50,6 @@ class Company extends \App\Models\BaseModel\BaseModel
         'slug'
     ];
 
-    public function short_url_domains()
-    {
-        return $this->hasMany(\App\Models\ShortUrlDomain::class, 'company_id');
-    }
-
     public function model_has_role()
     {
         return $this->hasOne(\App\Models\ModelHasRole::class, 'company_id');
@@ -80,5 +77,15 @@ class Company extends \App\Models\BaseModel\BaseModel
     public function company_users()
     {
         return $this->hasMany(\App\Models\CompanyUser::class, 'company_id');
+    }
+
+    public function short_url_domains()
+    {
+        return $this->hasMany(\App\Models\ShortUrlDomain::class, 'company_id');
+    }
+
+    public function short_urls()
+    {
+        return $this->hasMany(\App\Models\ShortUrl::class, 'company_id');
     }
 }
