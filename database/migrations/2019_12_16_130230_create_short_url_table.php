@@ -58,8 +58,10 @@ class CreateShortUrlTable extends Migration
                 $table->bigInteger('short_url_domain_id');
                 $table->text('full_url');
                 $table->text('short_url')->default('');
+                $table->text('hash')->default('');
                 $table->index(['uuid']);
                 $table->index(['short_url']);
+                $table->index(['hash']);
                 $table->foreign('company_id')
                     ->references('id')
                     ->on('users.companies')
