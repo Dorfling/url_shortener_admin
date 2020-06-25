@@ -10,6 +10,42 @@ use Illuminate\Support\Facades\DB;
 
 class ShortUrlLibrary
 {
+    /**
+     * @param Company $company
+     * @param ShortUrlDomain $shortUrlDomain
+     * @param string $fullUrl
+     * @param string|null $customPath
+     * @param int|null $hashLength
+     * @return ShortUrl
+     * @throws CustomDomainHashExistsException
+     */
+    public function createShortUrl(Company $company, ShortUrlDomain $shortUrlDomain, string $fullUrl, string $customPath = null, int $hashLength = null): ShortUrl
+    {
+        $shortUrl = ShortUrl::create(
+            [
+                'company_id' => $company->id,
+                'short_url_domain_id' => $shortUrlDomain->id,
+                'full_url' => $fullUrl,
+            ]
+        );
+        if ($customPath) {
+            if ($this->shortURLExists($shortUrlDomain, $customPath)) {
+                throw new CustomDomainHashExistsException("Path is in use");
+            }
+            $shortUrl->hash = $customPath;
+            $shortUrl->short_url = $this->getShortUrlStringFromDomainAndHash($shortUrlDomain, $customPath);
+            $shortUrl->save();
+            return $shortUrl;
+        }
+        if ($hashLength === null || $hashLength === 0) {
+            $hashLength = env('HASH_LENGTH',6);
+        }
+        $hash = $this->getUniqueHash($shortUrlDomain, $shortUrl->id,$hashLength);
+        $shortUrl->hash = $hash;
+        $shortUrl->short_url = $this->getShortUrlStringFromDomainAndHash($shortUrlDomain, $hash);
+        $shortUrl->save();
+        return $shortUrl;
+    }
 
     /**
      * @param ShortUrlDomain $shortUrlDomain
