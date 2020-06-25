@@ -38,9 +38,9 @@ class ShortUrlLibrary
             return $shortUrl;
         }
         if ($hashLength === null || $hashLength === 0) {
-            $hashLength = env('HASH_LENGTH',6);
+            $hashLength = env('HASH_LENGTH', 6);
         }
-        $hash = $this->getUniqueHash($shortUrlDomain, $shortUrl->id,$hashLength);
+        $hash = $this->getUniqueHash($shortUrlDomain, $shortUrl->id, $hashLength);
         $shortUrl->hash = $hash;
         $shortUrl->short_url = $this->getShortUrlStringFromDomainAndHash($shortUrlDomain, $hash);
         $shortUrl->save();
