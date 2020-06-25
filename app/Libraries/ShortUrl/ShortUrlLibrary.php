@@ -55,7 +55,7 @@ class ShortUrlLibrary
      */
     public function appendParametersToPath(string $url, string $queryString)
     {
-        return $this->appendValueToHref($url,$queryString);
+        return $this->appendValueToHref($url, $queryString);
     }
 
     /**
@@ -89,7 +89,7 @@ class ShortUrlLibrary
      * @param int|null $minLength
      * @return false|string
      */
-    public function getUniqueHash(ShortUrlDomain $shortUrlDomain, $int, int $minLength = null)
+    private function getUniqueHash(ShortUrlDomain $shortUrlDomain, $int, int $minLength = null)
     {
         $hash = $this->getShortUrlHashFromId($int);
         //If a minimum length was set, trim the hash if it's longer than the min length
