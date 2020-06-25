@@ -26,7 +26,7 @@ class CreatePaymentGatewaysTable extends Migration
         });
         \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('billing.payment_gateways');
         $sql = 'INSERT INTO billing.payment_gateways (id, uuid, name)
-                VALUES (1, \'\'5ba11c62-29bf-4108-aa89-9e2400c4b8a4\'\', \'Payfast\')';
+                VALUES (1, \'5ba11c62-29bf-4108-aa89-9e2400c4b8a4\', \'Payfast\')';
         DB::insert($sql);
 
     }

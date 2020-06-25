@@ -15,6 +15,33 @@ class CreateShortUrlTable extends Migration
     {
         DB::insert('CREATE SCHEMA short_urls');
 
+        Schema::create('short_urls.short_url_domains',
+            function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
+                $table->timestampTz('created_at')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->timestampTz('updated_at')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->timestampTz('deleted_at')->nullable();
+                $table->unsignedBigInteger('company_id');
+                $table->boolean('public')->default(false);
+                $table->text('domain');
+                $table->foreign('company_id')
+                    ->references('id')
+                    ->on('users.companies')
+                    ->onDelete('cascade');
+                $table->index(['uuid']);
+                $table->index(['domain']);
+                $table->index(['company_id']);
+            }
+        );
+
+        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('short_urls.short_url_domains');
+
+
         Schema::create(
             'short_urls.short_urls',
             function (Blueprint $table) {
@@ -26,11 +53,21 @@ class CreateShortUrlTable extends Migration
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->timestampTz('dt_deleted')->nullable();
+                $table->timestampTz('deleted_at')->nullable();
+                $table->bigInteger('company_id');
+                $table->bigInteger('short_url_domain_id');
                 $table->text('full_url');
                 $table->text('short_url')->default('');
                 $table->index(['uuid']);
                 $table->index(['short_url']);
+                $table->foreign('company_id')
+                    ->references('id')
+                    ->on('users.companies')
+                    ->onDelete('cascade');
+                $table->foreign('short_url_domain_id')
+                    ->references('id')
+                    ->on('short_urls.short_url_domains')
+                    ->onDelete('cascade');
             }
         );
 
