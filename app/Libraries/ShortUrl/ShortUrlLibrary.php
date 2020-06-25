@@ -47,6 +47,24 @@ class ShortUrlLibrary
         return $shortUrl;
     }
 
+    /**
+     * @param string $host
+     * @param string $path
+     * @return ShortUrl|null
+     */
+    public function getShortUrlFromUrlParts(string $host, string $path): ?ShortUrl
+    {
+        return $this->getShortUrlFromUrl($host . $path);
+    }
+
+    /**
+     * @param $url
+     * @return ShortUrl|null
+     */
+    public function getShortUrlFromUrl($url): ?ShortUrl
+    {
+        return ShortUrl::where('short_url', $url)->first();
+    }
 
     /**
      * @param string $url
