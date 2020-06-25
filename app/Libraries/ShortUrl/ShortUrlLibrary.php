@@ -18,11 +18,31 @@ class ShortUrlLibrary
      * @param string $hash
      * @return string
      */
-    private function getShortUrlStringFromDomainAndHash(ShortUrlDomain $shortUrlDomain, string $hash):string
+    private function getShortUrlStringFromDomainAndHash(ShortUrlDomain $shortUrlDomain, string $hash): string
     {
         return $shortUrlDomain->domain . '/' . $hash;
     }
 
+
+    /**
+     * @param ShortUrlDomain $shortUrlDomain
+     * @param $hash
+     * @return bool
+     */
+    public function shortURLExists(ShortUrlDomain $shortUrlDomain, $hash)
+    {
+        $sql = 'SELECT count(*) as counter FROM short_urls.short_urls
+                WHERE short_url_domain_id = :short_url_domain_id
+                AND hash = :hash LIMIT 1';
+        $result = DB::selectOne(
+            $sql,
+            [
+                'short_url_domain_id' => $shortUrlDomain->id,
+                'hash' => $hash,
+            ]
+        );
+        return ($result->counter > 0);
+    }
 
     /**
      * @param $int
