@@ -23,13 +23,12 @@ class ShortUrlLibrary
         return $shortUrlDomain->domain . '/' . $hash;
     }
 
-
     /**
      * @param ShortUrlDomain $shortUrlDomain
      * @param $hash
      * @return bool
      */
-    public function shortURLExists(ShortUrlDomain $shortUrlDomain, $hash)
+    private function shortURLExists(ShortUrlDomain $shortUrlDomain, $hash): bool
     {
         $sql = 'SELECT count(*) as counter FROM short_urls.short_urls
                 WHERE short_url_domain_id = :short_url_domain_id
@@ -48,9 +47,9 @@ class ShortUrlLibrary
      * @param $int
      * @return string
      */
-    public function getShortUrlHashFromId($int): string
+    private function getShortUrlHashFromId($int): string
     {
-        $sql = 'select stringify_bigint(pseudo_encrypt(CAST ( :int AS INT ))) as stringify';
+        $sql = 'select stringify_bigint(pseudo_encrypt(CAST ( :int AS BIGINT ))) as stringify';
         $result = DB::selectOne($sql, ['int' => $int]);
 
         return $result->stringify;
