@@ -14,7 +14,7 @@ class ShortUrlDomainLibrary
      * @param $domainString
      * @return bool
      */
-    public function validateDomainString($domainString): bool
+    public function validDomainString($domainString): bool
     {
         return preg_match('/^(?!\-)(?:(?:[a-zA-Z\d][a-zA-Z\d\-]{0,61})?[a-zA-Z\d]\.){1,126}(?!\d+)[a-zA-Z\d]{1,63}$/i', $domainString);
     }
