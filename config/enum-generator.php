@@ -58,5 +58,8 @@ return [
         'billing.payment_gateways' => [
             'uuid' => true,
         ],
+        'tags.cache_tags' => [
+            'uuid' => true,
+        ],
     ],
 ];
